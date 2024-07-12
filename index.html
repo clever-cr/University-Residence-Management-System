@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Residence Management System</title>
+    <script src="residenceManagement.js" defer></script>
+</head>
+<body>
+    <h1>University Residence Management System</h1>
+    <script>
+        
+        const dorm1 = new DormRoom("Dorm A", "123 University St", 300);
+        const apt1 = new Apartment("Apt 1", "456 University Ave", 3);
+        const student1 = new Student("Alice Johnson", "S12345", "Female");
+        const student2 = new Student("Bob Smith", "S67890", "Male");
+
+       
+        student1.assignResidence(dorm1);
+        student2.assignResidence(apt1);
+
+       
+        const maintenanceRequest1 = new MaintenanceRequest("Leaky faucet", student1);
+
+     
+        maintenanceRequest1.assignEmployee("John Doe");
+
+       
+        maintenanceRequest1.completeRequest();
+
+        
+        console.log(dorm1.getDetails());
+        console.log(apt1.getDetails());
+        console.log(student1.getDetails());
+        console.log(student2.getDetails());
+        console.log(maintenanceRequest1.getDetails());
+
+        
+        document.body.innerHTML += `<p>${dorm1.getDetails()}</p>`;
+        document.body.innerHTML += `<p>${apt1.getDetails()}</p>`;
+        document.body.innerHTML += `<p>${student1.getDetails()}</p>`;
+        document.body.innerHTML += `<p>${student2.getDetails()}</p>`;
+        document.body.innerHTML += `<p>${maintenanceRequest1.getDetails()}</p>`;
+    </script>
+</body>
+</html>
